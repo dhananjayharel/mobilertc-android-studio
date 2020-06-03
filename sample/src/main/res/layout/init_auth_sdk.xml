@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center"
+    android:background="#97B7B9FA"
+    android:orientation="vertical"
+
+>
+    <LinearLayout
+        android:id="@+id/layout_top"
+        android:layout_width="match_parent"
+        android:layout_height="320dp"
+        android:layout_marginTop="70dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingBottom="0dp"
+        android:paddingHorizontal="0dp">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/cardview_dark_background"
+        android:text="Live classes signup"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/cardview_dark_background"
+        android:text="You'r ready to take your live class"
+        android:textSize="15sp"
+        android:textStyle="normal" />
+ <!--
+    <Button
+        android:id="@+id/btnEmailLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:minWidth="150dp"
+        android:text="Email Login User" />
+
+    <Button
+        android:id="@+id/btnSSOLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:minWidth="150dp"
+        android:text="SSO Login User" />
+
+    <Button
+        android:id="@+id/btnWithoutLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:minWidth="150dp"
+        android:text="API User" />
+
+
+    <Button
+        android:id="@+id/btnSettings"
+        android:onClick="onClickSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:minWidth="150dp"
+        android:visibility="gone"
+        android:text="Settings" />
+  -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:layout_marginTop="0dp"
+            android:gravity="center_horizontal"
+            android:layout_gravity="bottom"
+            android:orientation="vertical"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            >
+            <ImageView
+                android:id="@+id/simpleImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/roundedimage"
+                android:src="@drawable/finding_your_purpose_image" />
+        </LinearLayout>
+<LinearLayout
+        android:id="@+id/layout_join"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="0dp"
+        android:gravity="center_horizontal"
+        android:layout_gravity="bottom"
+        android:orientation="vertical"
+
+       >
+
+        <EditText
+            android:id="@+id/edit_join_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Enter the class number"
+            android:minWidth="150dp"
+            android:visibility="gone"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/edit_join_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="150dp"
+            android:visibility="gone"
+            android:hint="Input user name" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/roundedcorner"
+            android:minWidth="150dp"
+            android:padding="10dp"
+            android:textColor="@color/zm_white"
+            android:onClick="onClickJoin"
+            android:text="Join the class" />
+
+
+    </LinearLayout>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/layout_strip"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="10dp"
+        android:background="#00cad4"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Casual conversation"
+            android:textColor="@color/zm_white"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_details"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginBottom="0dp"
+        android:background="@color/zm_white"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="Fly away with me"
+            android:textColor="@color/cardview_dark_background"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="Discuss vocabulary related to flying"
+            android:textColor="@color/zm_gray_6"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/progressPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/txtConnecting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:text="Logining... " />
+    </LinearLayout>
+</LinearLayout>
