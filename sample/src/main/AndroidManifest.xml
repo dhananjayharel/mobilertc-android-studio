@@ -151,6 +151,24 @@
             android:configChanges="orientation|screenSize"
             android:hardwareAccelerated="false"
             android:theme="@style/ZMTheme.SubWindow" />
+        <activity android:name=".quiz.QuizActivity">
+
+        </activity>
+        <activity android:name=".quiz.QuestionsActivity">
+            <intent-filter>
+                <action android:name=".QuestionsActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".quiz.DeveloperActivity">
+            <intent-filter>
+                <action android:name=".quiz.DeveloperActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".quiz.ResultActivity"></activity>
     </application>
 
     <permission
