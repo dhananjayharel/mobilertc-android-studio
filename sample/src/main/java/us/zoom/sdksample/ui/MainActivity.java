@@ -36,7 +36,7 @@ public class MainActivity extends Activity {
 
     private void loginSuccess() {
         // TODO: go to home screen
-        Intent intent = new Intent(this, InitAuthSDKActivity.class);
+        Intent intent = new Intent(this, HomeActivity.class);
         startActivity(intent);
     }
 }

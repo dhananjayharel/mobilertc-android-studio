@@ -9,7 +9,8 @@
         android:name="androidx.multidex.MultiDexApplication"
         android:icon="@drawable/ic_launcher"
         android:label="@string/this_app_name">
-        <activity android:name=".ui.InitAuthSDKActivity"></activity>
+        <activity android:name=".ui.HomeActivity"></activity>
+        <activity android:name=".ui.InitAuthSDKActivity" />
         <activity
             android:name=".ui.MainActivity"
             android:configChanges="screenSize|orientation|keyboardHidden|keyboard"
@@ -151,9 +152,7 @@
             android:configChanges="orientation|screenSize"
             android:hardwareAccelerated="false"
             android:theme="@style/ZMTheme.SubWindow" />
-        <activity android:name=".quiz.QuizActivity">
-
-        </activity>
+        <activity android:name=".quiz.QuizActivity"></activity>
         <activity android:name=".quiz.QuestionsActivity">
             <intent-filter>
                 <action android:name=".QuestionsActivity" />
@@ -168,7 +167,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".quiz.ResultActivity"></activity>
+        <activity android:name=".quiz.ResultActivity" />
     </application>
 
     <permission

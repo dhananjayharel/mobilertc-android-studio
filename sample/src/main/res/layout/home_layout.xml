@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="false">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    >
+    <LinearLayout
+        android:id="@+id/layout_top"
+        android:layout_width="match_parent"
+        android:layout_height="420dp"
+        android:layout_marginTop="70dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingBottom="0dp"
+        android:layout_margin="10dp"
+        android:paddingHorizontal="0dp">
+        <LinearLayout
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="0dp"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:paddingBottom="0dp"
+            android:paddingHorizontal="0dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:textColor="#0060bf"
+                android:text="Live Classes"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+            <LinearLayout
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginTop="0dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="0dp"
+                android:background="@drawable/roundedimage"
+                android:paddingHorizontal="0dp">
+                <ProgressBar
+
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:padding="1dp"
+                    android:progress="20"
+                    android:progressDrawable="@drawable/progressbar_rounded_corner"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/cardview_dark_background"
+                    android:text="20%"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/cardview_dark_background"
+            android:text="Book your class in 20 secs"
+            android:textSize="15sp"
+            android:textStyle="normal" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:layout_marginTop="0dp"
+            android:gravity="center_horizontal"
+            android:layout_gravity="bottom"
+            android:orientation="vertical"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            >
+            <ImageView
+                android:id="@+id/simpleImageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/roundedimage"
+                android:src="@drawable/finding_your_purpose_image" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="105dp"
+                android:background="@drawable/roundedcorner"
+                android:minWidth="150dp"
+                android:padding="10dp"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/zm_white"
+                android:onClick="onClickSignUp"
+
+                android:text="Sign Up" />
+        </FrameLayout>
+        <LinearLayout
+            android:id="@+id/layout_join"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="0dp"
+            android:gravity="center_horizontal"
+            android:layout_gravity="bottom"
+            android:orientation="vertical"
+
+            >
+
+            <EditText
+                android:id="@+id/edit_join_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Enter the class number"
+                android:minWidth="150dp"
+                android:visibility="gone"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/edit_join_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="150dp"
+                android:visibility="gone"
+                android:hint="Input user name" />
+
+
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/layout_strip"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="10dp"
+        android:background="#00cad4"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Casual conversation"
+            android:textColor="@color/zm_white"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_details"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginBottom="0dp"
+        android:background="@color/zm_white"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="Fly away with me"
+            android:textColor="@color/cardview_dark_background"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="Discuss vocabulary related to flying"
+            android:textColor="@color/zm_gray_6"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="370dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+
+        android:background="#97B7B9FA"
+        android:paddingHorizontal="0dp">
+        <LinearLayout
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="0dp"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:paddingBottom="0dp"
+            android:paddingHorizontal="0dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:textColor="#0060bf"
+                android:text="Lessons: Quiz"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+            <LinearLayout
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginTop="0dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="0dp"
+                android:background="@drawable/roundedimage"
+                android:paddingHorizontal="0dp">
+                <ProgressBar
+                    style="?android:attr/progressBarStyleHorizontal"
+                   android:layout_width="wrap_content"
+                    android:minWidth="250dp"
+                    android:layout_height="wrap_content"
+                    android:padding="1dp"
+                    android:progress="50"
+                    android:progressDrawable="@drawable/progressbar_rounded_corner"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/cardview_dark_background"
+                    android:text="42%"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:layout_marginTop="0dp"
+            android:gravity="center_horizontal"
+            android:layout_gravity="bottom"
+            android:orientation="vertical"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            >
+            <ImageView
+                android:id="@+id/simpleImageView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+               android:scaleType="fitXY"
+
+                android:background="@drawable/roundedimage"
+                android:src="@drawable/howmuchpasta" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="105dp"
+                android:background="@drawable/roundedcorner"
+                android:minWidth="150dp"
+                android:padding="10dp"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/zm_white"
+                android:onClick="onClickQuiz"
+
+                android:text="Take the quiz" />
+        </FrameLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/layout_details2"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginBottom="0dp"
+        android:background="#97B7B9FA"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="How much pasta?"
+            android:textColor="@color/cardview_dark_background"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="Learn how to talk about how much food you need."
+            android:textColor="@color/cardview_dark_background"
+            android:textSize="15sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/progressPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/txtConnecting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:text="Logining... " />
+    </LinearLayout>
+</LinearLayout>
+</ScrollView>
