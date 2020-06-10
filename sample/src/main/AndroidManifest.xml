@@ -152,8 +152,12 @@
             android:configChanges="orientation|screenSize"
             android:hardwareAccelerated="false"
             android:theme="@style/ZMTheme.SubWindow" />
-        <activity android:name=".quiz.QuizActivity"></activity>
-        <activity android:name=".quiz.QuestionsActivity">
+        <activity android:name=".quiz.QuizActivity"
+            android:parentActivityName=".ui.HomeActivity"
+            ></activity>
+        <activity android:name=".quiz.QuestionsActivity"
+            android:parentActivityName=".ui.HomeActivity"
+            >
             <intent-filter>
                 <action android:name=".QuestionsActivity" />
 

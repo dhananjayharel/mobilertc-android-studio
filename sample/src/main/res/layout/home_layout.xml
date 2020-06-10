@@ -2,8 +2,9 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:fillViewport="false">
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:gravity="center"
@@ -12,21 +13,20 @@
     <LinearLayout
         android:id="@+id/layout_top"
         android:layout_width="match_parent"
-        android:layout_height="420dp"
+        android:layout_height="440dp"
         android:layout_marginTop="70dp"
         android:gravity="center_horizontal"
         android:orientation="vertical"
         android:paddingBottom="0dp"
-        android:layout_margin="10dp"
+        android:layout_margin="5dp"
         android:paddingHorizontal="0dp">
         <LinearLayout
-            android:padding="10dp"
+            android:padding="5dp"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="120dp"
             android:layout_marginTop="0dp"
             android:gravity="center_vertical"
             android:orientation="vertical"
-            android:paddingBottom="0dp"
             android:paddingHorizontal="0dp">
             <TextView
                 android:layout_width="wrap_content"
@@ -46,11 +46,20 @@
                 android:paddingBottom="0dp"
                 android:background="@drawable/roundedimage"
                 android:paddingHorizontal="0dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/cardview_dark_background"
+                    android:text="4/12"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
                 <ProgressBar
 
                     style="?android:attr/progressBarStyleHorizontal"
                     android:layout_width="250dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="10dp"
+                    android:layout_marginLeft="5dp"
                     android:padding="1dp"
                     android:progress="20"
                     android:progressDrawable="@drawable/progressbar_rounded_corner"/>
@@ -59,7 +68,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:textColor="@color/cardview_dark_background"
-                    android:text="20%"
+                    android:text="33%"
                     android:textSize="10sp"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -70,40 +79,108 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:textColor="@color/cardview_dark_background"
-            android:text="Book your class in 20 secs"
+            android:text="Book your class in 0:20"
             android:textSize="15sp"
             android:textStyle="normal" />
-
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="260dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="0dp"
+            android:background="@color/cardview_dark_background"
+            android:orientation="vertical"
+            app:cardCornerRadius="@dimen/cardview_default_radius"
+            app:cardElevation="5dp"
+            android:layout_margin="10dp"
+            >
+         <LinearLayout
+             android:orientation="vertical"
+             android:layout_width="match_parent"
+             android:layout_height="260dp"
+            >
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="220dp"
+            android:layout_height="170dp"
             android:layout_marginTop="0dp"
             android:gravity="center_horizontal"
             android:layout_gravity="bottom"
             android:orientation="vertical"
-            android:paddingLeft="30dp"
-            android:paddingRight="30dp"
+            android:paddingLeft="0dp"
+            android:paddingRight="0dp"
             >
             <ImageView
                 android:id="@+id/simpleImageView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/roundedimage"
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+               android:scaleType="fitXY"
                 android:src="@drawable/finding_your_purpose_image" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="105dp"
+                android:layout_marginTop="110dp"
                 android:background="@drawable/roundedcorner"
                 android:minWidth="150dp"
-                android:padding="10dp"
+                android:padding="5dp"
                 android:layout_gravity="center_horizontal"
                 android:textColor="@color/zm_white"
                 android:onClick="onClickSignUp"
 
                 android:text="Sign Up" />
+
+
         </FrameLayout>
+             <LinearLayout
+                 android:id="@+id/layout_strip"
+                 android:layout_width="match_parent"
+                 android:layout_height="30dp"
+                 android:layout_gravity="bottom"
+                 android:layout_marginTop="0dp"
+                 android:background="#00cad4"
+                 android:gravity="center_horizontal"
+                 android:orientation="vertical"
+                 android:padding="5dp">
+
+                 <TextView
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:gravity="center"
+                     android:text="Casual conversation"
+                     android:textColor="@color/zm_white"
+                     android:textSize="15sp"
+                     android:textStyle="bold" />
+             </LinearLayout>
+
+             <LinearLayout
+                 android:id="@+id/layout_details"
+                 android:layout_width="match_parent"
+                 android:layout_height="70dp"
+
+                 android:background="@color/zm_white"
+                 android:gravity="center_horizontal"
+                 android:orientation="vertical"
+                 android:padding="5dp">
+
+                 <TextView
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:gravity="center_horizontal"
+                     android:text="Fly away with me"
+                     android:textColor="@color/cardview_dark_background"
+                     android:textSize="19dp"
+                     android:textStyle="bold" />
+
+                 <TextView
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:gravity="center_horizontal"
+                     android:text="Discuss vocabulary related to flying"
+                     android:textColor="@color/zm_gray_6"
+                     android:textSize="9dp" />
+             </LinearLayout>
+
+         </LinearLayout>
+        </androidx.cardview.widget.CardView>
         <LinearLayout
             android:id="@+id/layout_join"
             android:layout_width="match_parent"
@@ -139,64 +216,19 @@
 
 
     </LinearLayout>
-    <LinearLayout
-        android:id="@+id/layout_strip"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_gravity="bottom"
-        android:layout_marginTop="10dp"
-        android:background="#00cad4"
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
-        android:padding="15dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Casual conversation"
-            android:textColor="@color/zm_white"
-            android:textSize="15sp"
-            android:textStyle="bold" />
-    </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/layout_details"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_marginBottom="0dp"
-        android:background="@color/zm_white"
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
-        android:padding="15dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:text="Fly away with me"
-            android:textColor="@color/cardview_dark_background"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:text="Discuss vocabulary related to flying"
-            android:textColor="@color/zm_gray_6"
-            android:textSize="12sp" />
-    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/layout_bottom"
         android:layout_width="match_parent"
-        android:layout_height="370dp"
+        android:layout_height="390dp"
         android:layout_marginTop="20dp"
         android:gravity="center_horizontal"
         android:orientation="vertical"
 
-        android:background="#97B7B9FA"
+        android:background="#59C7C8E6"
         android:paddingHorizontal="0dp">
         <LinearLayout
             android:padding="10dp"
@@ -225,12 +257,21 @@
                 android:paddingBottom="0dp"
                 android:background="@drawable/roundedimage"
                 android:paddingHorizontal="0dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/cardview_dark_background"
+                    android:text="1/7"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
                 <ProgressBar
                     style="?android:attr/progressBarStyleHorizontal"
                    android:layout_width="wrap_content"
                     android:minWidth="250dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="10dp"
                     android:padding="1dp"
+                    android:layout_marginLeft="5dp"
                     android:progress="50"
                     android:progressDrawable="@drawable/progressbar_rounded_corner"/>
                 <TextView
@@ -238,72 +279,162 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:textColor="@color/cardview_dark_background"
-                    android:text="42%"
+                    android:text="14%"
                     android:textSize="10sp"
                     android:textStyle="bold" />
             </LinearLayout>
         </LinearLayout>
 
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="220dp"
-            android:layout_marginTop="0dp"
-            android:gravity="center_horizontal"
-            android:layout_gravity="bottom"
-            android:orientation="vertical"
-            android:paddingLeft="30dp"
-            android:paddingRight="30dp"
-            >
-            <ImageView
-                android:id="@+id/simpleImageView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-               android:scaleType="fitXY"
-
-                android:background="@drawable/roundedimage"
-                android:src="@drawable/howmuchpasta" />
-
-            <Button
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="300dp"
+            android:scrollbars="none">
+            <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="105dp"
-                android:background="@drawable/roundedcorner"
-                android:minWidth="150dp"
-                android:padding="10dp"
-                android:layout_gravity="center_horizontal"
-                android:textColor="@color/zm_white"
-                android:onClick="onClickQuiz"
+                android:layout_height="300dp"
+                android:orientation="horizontal"
+                android:padding="10dp">
 
-                android:text="Take the quiz" />
-        </FrameLayout>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="180dp"
+                    android:layout_height="260dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="0dp"
+                    android:background="@color/cardview_dark_background"
+                    android:orientation="vertical"
+                    app:cardCornerRadius="@dimen/cardview_default_radius"
+                    app:cardElevation="5dp"
+                    android:layout_margin="10dp"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="270dp"
+                        android:onClick="onClickQuiz"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/simpleImageView1"
+                            android:layout_width="match_parent"
+                            android:layout_height="190dp"
+                            android:layout_marginTop="0dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/howmuchpasta" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="5dp"
+                            android:text="1) How much pasta?"
+                            android:textColor="@color/cardview_dark_background"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Learn how to talk about how much food you need."
+                            android:textColor="@color/cardview_dark_background"
+                            android:textSize="12dp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="180dp"
+                    android:layout_height="260dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="0dp"
+                    android:background="@color/cardview_dark_background"
+                    android:orientation="vertical"
+                    app:cardCornerRadius="@dimen/cardview_default_radius"
+                    app:cardElevation="5dp"
+                    android:layout_margin="10dp"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="270dp"
+                        android:onClick="onClickQuiz"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/simpleImageView"
+                            android:layout_width="match_parent"
+                            android:layout_height="190dp"
+                            android:layout_marginTop="0dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/howmanypounds" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="5dp"
+                            android:text="2) How many pounds?"
+                            android:textColor="@color/cardview_dark_background"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Learn how to talk about how much different foods weigh."
+                            android:textColor="@color/cardview_dark_background"
+                            android:textSize="12dp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="180dp"
+                    android:layout_height="260dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="0dp"
+                    android:background="@color/cardview_dark_background"
+                    android:orientation="vertical"
+                    app:cardCornerRadius="@dimen/cardview_default_radius"
+                    app:cardElevation="5dp"
+                    android:layout_margin="10dp"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="270dp"
+                        android:onClick="onClickQuiz"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/simpleImageView3"
+                            android:layout_width="match_parent"
+                            android:layout_height="190dp"
+                            android:layout_marginTop="0dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/afewgrapes" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="5dp"
+                            android:text="3) A Few Grapes"
+                            android:textColor="@color/cardview_dark_background"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="Learn new ways to talk about how much food you want."
+                            android:textColor="@color/cardview_dark_background"
+                            android:textSize="12dp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+        </HorizontalScrollView>
     </LinearLayout>
-    <LinearLayout
-        android:id="@+id/layout_details2"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginBottom="0dp"
-        android:background="#97B7B9FA"
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
-        android:padding="15dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:text="How much pasta?"
-            android:textColor="@color/cardview_dark_background"
-            android:textSize="25sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:text="Learn how to talk about how much food you need."
-            android:textColor="@color/cardview_dark_background"
-            android:textSize="15sp" />
-    </LinearLayout>
     <LinearLayout
         android:id="@+id/progressPanel"
         android:layout_width="match_parent"
