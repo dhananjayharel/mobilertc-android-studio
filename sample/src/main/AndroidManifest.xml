@@ -160,7 +160,6 @@
             >
             <intent-filter>
                 <action android:name=".QuestionsActivity" />
-
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -172,6 +171,20 @@
             </intent-filter>
         </activity>
         <activity android:name=".quiz.ResultActivity" />
+
+
+        <activity android:name=".quiz2.MainActivity"
+            android:parentActivityName=".ui.HomeActivity"
+            >
+
+        </activity>
+        <activity android:name=".quiz2.ResultActivity"
+            android:parentActivityName=".ui.HomeActivity"
+            />
+        <activity android:name=".quiz2.FormActivity"
+            android:parentActivityName=".ui.HomeActivity"
+            ></activity>
+
     </application>
 
     <permission
