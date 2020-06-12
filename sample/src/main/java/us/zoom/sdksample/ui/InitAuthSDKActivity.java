@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.List;
@@ -58,6 +60,48 @@ public class InitAuthSDKActivity extends Activity implements InitAuthSDKCallback
 
         setContentView(R.layout.init_auth_sdk);
 
+        //Class details
+        String classTag="123";
+        //Getting intent values
+        Intent intent = getIntent();
+        classTag = intent.getStringExtra("classTag");
+        Log.d("INFO","2222222"+classTag);
+        //Prevent keyboard from popping up when starting
+        //Setting view var
+        ImageView mQuizImage;
+        mQuizImage = (ImageView) findViewById(R.id.simpleImageView);
+        TextView classheading = (TextView) findViewById(R.id.classheading);
+        TextView classsubheading = (TextView) findViewById(R.id.classsubheading);
+        String heading="NA";
+        String subHeading="NA";
+        String imageSrc="na";
+
+        if(classTag.equals("liveclass1")){
+
+            heading="Social Media";
+            subHeading="Discuss vocabulary related to social media";
+            imageSrc = "social_media_liveclassimage";
+
+        }
+        else
+        if(classTag.equals("liveclass2")){
+            heading="Shoes";
+            subHeading="Learn vocabulary related to shoes";
+            imageSrc="shoes_liveclassimage";
+        }
+        else
+        if(classTag.equals("liveclass3")){
+            heading="Fly away with me";
+            subHeading="Discuss vocabulary related to flying";
+            imageSrc="finding_your_purpose_image";
+        }
+
+        classheading.setText(heading);
+        classsubheading.setText(subHeading);
+
+        //Update image view
+        mQuizImage.setImageResource(getResources().getIdentifier(imageSrc, "drawable", getPackageName()));
+
        // mBtnEmailLogin = (Button) findViewById(R.id.btnEmailLogin);
        // mBtnEmailLogin.setOnClickListener(this);
 
@@ -87,6 +131,12 @@ public class InitAuthSDKActivity extends Activity implements InitAuthSDKCallback
             }
             ZoomSDK.getInstance().getMeetingService().addListener(this);
             ZoomSDK.getInstance().getMeetingSettingsHelper().enable720p(true);
+            
+
+            
+            
+            
+            //classdetails
         } else {
            // mBtnEmailLogin.setVisibility(View.GONE);
            // mBtnSSOLogin.setVisibility(View.GONE);

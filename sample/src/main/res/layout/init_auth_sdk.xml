@@ -3,7 +3,6 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:gravity="center"
-    android:background="#97B7B9FA"
     android:orientation="vertical"
 
 >
@@ -23,17 +22,10 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:textColor="@color/cardview_dark_background"
-        android:text="Live classes signup"
-        android:textSize="20sp"
+        android:text="Live class coming up"
+        android:textSize="25sp"
         android:textStyle="bold" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textColor="@color/cardview_dark_background"
-        android:text="You'r ready to take your live class"
-        android:textSize="15sp"
-        android:textStyle="normal" />
+
  <!--
     <Button
         android:id="@+id/btnEmailLogin"
@@ -84,7 +76,7 @@
                 android:id="@+id/simpleImageView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/roundedimage"
+
                 android:src="@drawable/finding_your_purpose_image" />
         </LinearLayout>
 <LinearLayout
@@ -115,42 +107,13 @@
             android:visibility="gone"
             android:hint="Input user name" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/roundedcorner"
-            android:minWidth="150dp"
-            android:padding="10dp"
-            android:textColor="@color/zm_white"
-            android:onClick="onClickJoin"
-            android:text="Join the class" />
 
 
     </LinearLayout>
 
 
     </LinearLayout>
-    <LinearLayout
-        android:id="@+id/layout_strip"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_gravity="bottom"
-        android:layout_marginTop="10dp"
-        android:background="#00cad4"
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
-        android:padding="15dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Casual conversation"
-            android:textColor="@color/zm_white"
-            android:textSize="15sp"
-            android:textStyle="bold" />
-    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/layout_details"
@@ -169,15 +132,28 @@
             android:text="Fly away with me"
             android:textColor="@color/cardview_dark_background"
             android:textSize="25sp"
+            android:id="@+id/classheading"
             android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
+            android:id="@+id/classsubheading"
             android:text="Discuss vocabulary related to flying"
             android:textColor="@color/zm_gray_6"
             android:textSize="15sp" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/roundedbuttonblue"
+            android:minWidth="150dp"
+            android:padding="10dp"
+            android:textColor="@color/zm_white"
+            android:onClick="onClickJoin"
+            android:text="Join the class" />
+
     </LinearLayout>
 
     <LinearLayout

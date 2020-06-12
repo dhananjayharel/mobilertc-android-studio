@@ -13,7 +13,7 @@ import android.widget.ImageView;
 import android.os.CountDownTimer;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
+import android.text.method.LinkMovementMethod;
 
 import us.zoom.sdksample.R;
 import us.zoom.sdksample.quiz.QuizActivity;
@@ -21,21 +21,50 @@ import us.zoom.sdksample.quiz.QuizActivity;
 import static java.security.AccessController.getContext;
 
 public class HomeActivity extends Activity {
-    public int counter=60;
+    public int counter=35;
     Button button,signup1,signup2,signup3;
-    TextView classTimer,timerText;
+    TextView classTimer,timerText,liveclass1_link,liveclass2_link,liveclass3_link;
+    LinearLayout laodingClasses,Liveclasseslist,Bookyourclassmessage;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_layout);
+
+        //loading classes
+        laodingClasses = (LinearLayout)findViewById(R.id.loadingclassesmessage);
+        Liveclasseslist = (LinearLayout)findViewById(R.id.classeslist);
+        Bookyourclassmessage = (LinearLayout)findViewById(R.id.bookyourclassmessage);
+        final Handler handler1 = new Handler();
+        handler1.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                //Do something after 100ms
+                laodingClasses.setVisibility(View.GONE);
+                Liveclasseslist.setVisibility(View.VISIBLE);
+                Bookyourclassmessage.setVisibility(View.VISIBLE);
+
+            }
+        }, 5000);
+
+
+
+
+
         classTimer = (TextView)findViewById(R.id.timer) ;
         timerText =(TextView)findViewById(R.id.timerMessage) ;
-        signup1 = (Button)findViewById(R.id.signup1);
-        signup2 = (Button)findViewById(R.id.signup2);
-        signup3 = (Button)findViewById(R.id.signup3);
+        signup1 = (Button)findViewById(R.id.liveclass1_signup);
+        signup2 = (Button)findViewById(R.id.liveclass2_signup);
+        signup3 = (Button)findViewById(R.id.liveclass3_signup);
         //class booking timer
+        liveclass1_link = (TextView) findViewById(R.id.liveclass1_link);
+        liveclass2_link = (TextView) findViewById(R.id.liveclass2_link);
+        liveclass3_link = (TextView) findViewById(R.id.liveclass3_link);
 
-        new CountDownTimer(30000, 1000){
+        liveclass1_link.setMovementMethod(LinkMovementMethod.getInstance());
+        liveclass2_link.setMovementMethod(LinkMovementMethod.getInstance());
+        liveclass3_link.setMovementMethod(LinkMovementMethod.getInstance());
+
+        new CountDownTimer(35000, 1000){
             public void onTick(long millisUntilFinished){
                 String timestrip = String.format("%02d:%02d",counter/60,counter%60);
                 classTimer.setText(timestrip);
@@ -70,15 +99,32 @@ public class HomeActivity extends Activity {
 
     public void onClickSignUp(View view) {
         // go to home  live class screen
-        Intent intent = new Intent(this, InitAuthSDKActivity.class);
+        final Intent intent = new Intent(this, InitAuthSDKActivity.class);
+
         String classTag = (String)view.getTag();
+        intent.putExtra("classTag",classTag);
         Resources res = getResources();
         int iamgealtid = res.getIdentifier(classTag+"_assigning","id",getPackageName());
+        int classImage = res.getIdentifier(classTag+"_image1","id",getPackageName());
+        int signupbutton = res.getIdentifier(classTag+"_signup","id",getPackageName());
+
+
         Log.d("info","iamgealtid"+iamgealtid);
         LinearLayout imgalt1 = (LinearLayout)findViewById(iamgealtid);
         imgalt1.setVisibility(View.VISIBLE);
-        ImageView img1 = (ImageView)findViewById(R.id.liveclass1_image1);
+        ImageView img1 = (ImageView)findViewById(classImage);
+        Button signup = (Button)findViewById(signupbutton);
+
         img1.setVisibility(View.GONE);
+        signup.setVisibility(View.GONE);
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                //Do something after 100ms
+                startActivity(intent);
+            }
+        }, 7000);
 
         //startActivity(intent);
     }
