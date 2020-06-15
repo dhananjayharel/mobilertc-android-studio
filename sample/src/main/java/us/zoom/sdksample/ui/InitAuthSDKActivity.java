@@ -91,9 +91,9 @@ public class InitAuthSDKActivity extends Activity implements InitAuthSDKCallback
         }
         else
         if(classTag.equals("liveclass3")){
-            heading="Fly away with me";
-            subHeading="Discuss vocabulary related to flying";
-            imageSrc="finding_your_purpose_image";
+            heading="Checking In";
+            subHeading="Discuss vocabulary related to hotels";
+            imageSrc="checkinginclassimage";
         }
 
         classheading.setText(heading);

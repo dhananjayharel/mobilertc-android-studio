@@ -44,7 +44,7 @@ public class HomeActivity extends Activity {
                 Bookyourclassmessage.setVisibility(View.VISIBLE);
 
             }
-        }, 5000);
+        }, 3000);
 
 
 
@@ -123,8 +123,9 @@ public class HomeActivity extends Activity {
             public void run() {
                 //Do something after 100ms
                 startActivity(intent);
+
             }
-        }, 7000);
+        }, 5000);
 
         //startActivity(intent);
     }

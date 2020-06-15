@@ -466,7 +466,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="170dp"
                                 android:scaleType="fitXY"
-                                android:src="@drawable/finding_your_purpose_image" />
+                                android:src="@drawable/checkinginclassimage" />
 
                             <LinearLayout
                                 android:id="@+id/liveclass3_assigning"
@@ -529,7 +529,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:gravity="center_horizontal"
-                                android:text="Fly away with me"
+                                android:text="Checking In"
                                 android:textColor="@color/cardview_dark_background"
                                 android:textSize="19dp"
                                 android:textStyle="bold" />
@@ -538,7 +538,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center_horizontal"
-                                android:text="Discuss vocabulary related to flying"
+                                android:text="Discuss vocabulary related to hotels"
                                 android:textColor="@color/zm_gray_6"
                                 android:textSize="12dp" />
 
