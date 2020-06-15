@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
+
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -12,8 +13,12 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.os.CountDownTimer;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.text.method.LinkMovementMethod;
+import android.widget.Toast;
+
+import java.util.Calendar;
 
 import us.zoom.sdksample.R;
 import us.zoom.sdksample.quiz.QuizActivity;
@@ -25,10 +30,17 @@ public class HomeActivity extends Activity {
     Button button,signup1,signup2,signup3;
     TextView classTimer,timerText,liveclass1_link,liveclass2_link,liveclass3_link;
     LinearLayout laodingClasses,Liveclasseslist,Bookyourclassmessage;
+    public boolean classInProgress=false;
+    public String currentClassTag=null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_layout);
+
+        Calendar calendar = Calendar.getInstance();
+        int minutes = calendar.get(Calendar.MINUTE);
+        Log.d("INFO","mins:"+minutes);
+
 
         //loading classes
         laodingClasses = (LinearLayout)findViewById(R.id.loadingclassesmessage);
@@ -100,20 +112,42 @@ public class HomeActivity extends Activity {
     public void onClickSignUp(View view) {
         // go to home  live class screen
         final Intent intent = new Intent(this, InitAuthSDKActivity.class);
+        final String classTag = (String) view.getTag();
+        if(currentClassTag==null){
+            currentClassTag = classTag;
+            Log.d("INFO22","classtagisnull");
+        }
 
-        String classTag = (String)view.getTag();
-        intent.putExtra("classTag",classTag);
+
+        intent.putExtra("classTag", classTag);
+        Log.d("INFO22","classtag="+classTag);
+        if(currentClassTag!=null && !currentClassTag.equals(classTag)){
+            Log.d("INFO22","classtagnotnull");
+            Toast.makeText(getApplicationContext(),"Cant change, Your class is already started!",Toast.LENGTH_LONG);
+        }
+        else
+        if (classInProgress == true && currentClassTag.equals(classTag)) {
+
+            startActivity(intent);
+
+        } else {
+
+
         Resources res = getResources();
-        int iamgealtid = res.getIdentifier(classTag+"_assigning","id",getPackageName());
-        int classImage = res.getIdentifier(classTag+"_image1","id",getPackageName());
-        int signupbutton = res.getIdentifier(classTag+"_signup","id",getPackageName());
+        int iamgealtid = res.getIdentifier(classTag + "_assigning", "id", getPackageName());
+        int classImage = res.getIdentifier(classTag + "_image1", "id", getPackageName());
+        int signupbutton = res.getIdentifier(classTag + "_signup", "id", getPackageName());
 
 
-        Log.d("info","iamgealtid"+iamgealtid);
-        LinearLayout imgalt1 = (LinearLayout)findViewById(iamgealtid);
+        Log.d("info", "iamgealtid" + iamgealtid);
+        LinearLayout imgalt1 = (LinearLayout) findViewById(iamgealtid);
+        final ProgressBar progress = (ProgressBar) imgalt1.getChildAt(0);
+        final TextView text = (TextView) imgalt1.getChildAt(1);
+
+        text.setText("We are assigning you a teacher. This could take a few moments.");
         imgalt1.setVisibility(View.VISIBLE);
-        ImageView img1 = (ImageView)findViewById(classImage);
-        Button signup = (Button)findViewById(signupbutton);
+        ImageView img1 = (ImageView) findViewById(classImage);
+        final Button signup = (Button) findViewById(signupbutton);
 
         img1.setVisibility(View.GONE);
         signup.setVisibility(View.GONE);
@@ -122,12 +156,18 @@ public class HomeActivity extends Activity {
             @Override
             public void run() {
                 //Do something after 100ms
+                progress.setVisibility(View.INVISIBLE);
+                text.setText("Class in progress.");
+                classInProgress = true;
                 startActivity(intent);
+                signup.setVisibility(View.VISIBLE);
+                signup.setText("Join");
 
             }
         }, 5000);
 
         //startActivity(intent);
+    }
     }
 
 
